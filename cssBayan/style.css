@@ -36,7 +36,11 @@ body {
 .bayan__input:checked ~ div > img {
   width: 70vw;
   height: 70vw;
-  transition: height 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.bayan__input:checked ~ label >div {
+  transform: rotate(0);
+  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .bayan__item__title {
   display: flex;
@@ -50,6 +54,7 @@ body {
 .bayan__item__title__opener {
   align-items: end;
   font-size: 1rem;
+  transform: rotate(45deg);
 }
 .bayan__item__img {
   text-align: center;
