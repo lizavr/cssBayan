@@ -30,26 +30,28 @@ body {
   border-bottom: 0.1vh solid var(--border-color);
 }
 .bayan__input {
-  width: 0;
+  opacity: 0;
+  width: 100%;
+  height: auto;
 }
-.bayan__input:checked ~ div {
+.bayan__input:checked ~ label > .bayan__item__img {
   width: 100%;
   height: 100%;
-  transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: height 0.4s linear;
 }
-.bayan__input:checked ~ div > img {
-  width: 70vw;
-  height: 70vw;
-  transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+.bayan__input:checked ~ label > .bayan__item__img > img {
+  width: 20vw;
+  height: 20vw;
+  transition: height 0.4s linear;
 }
-.bayan__input:checked ~ label > div {
+.bayan__input:checked ~ label > .bayan__item__title__opener {
   transform: rotate(0);
-  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.4s linear;
 }
 .bayan__item__title {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1vh;
+  padding-bottom: 1vh;
 }
 .bayan__item__title__name {
   font-weight: 500;
@@ -59,15 +61,18 @@ body {
   align-items: end;
   font-size: 1rem;
   transform: rotate(45deg);
+  transition: transform 0.4s linear;
 }
 .bayan__item__img {
   text-align: center;
-  width: 0;
+  width: 100%;
   height: 0;
+  transition: height 0.2s linear;
 }
 .bayan__item__img > img {
-  width: 0;
+  width: 20vw;
   height: 0;
+  transition: height 0.2s linear;
 }
 
 @media (min-width: 820px) {
@@ -80,19 +85,19 @@ body {
   .bayan__item__title__opener {
     font-size: 1.8rem;
   }
-  .bayan__input:checked ~ div {
+  .bayan__input:checked ~ label > .bayan__item__img {
     width: 100%;
     height: 100%;
-    transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: height 0.4s linear;
   }
-  .bayan__input:checked ~ div > img {
+  .bayan__input:checked ~ label > .bayan__item__img > img {
     width: 20vw;
     height: 20vw;
-    transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: height 0.4s linear;
   }
-  .bayan__input:checked ~ label > div {
+  .bayan__input:checked ~ label > .bayan__item__title__opener {
     transform: rotate(0);
-    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 0.4s linear;
   }
 }
 
@@ -111,21 +116,27 @@ body {
   .bayan:hover {
     cursor: pointer;
   }
+  .bayan > div > input:hover {
+    cursor: pointer;
+  }
   .bayan > div > label:hover {
     cursor: pointer;
   }
-  .bayan__item:hover > div {
+  .bayan__item:hover > label > .bayan__item__img {
     width: 100%;
     height: 100%;
-    transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-  .bayan__item:hover > div > img {
+  .bayan__item:hover > label > .bayan__item__img > img {
     width: 20vw;
     height: 20vw;
-    transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-  .bayan__item:hover > label > div {
+  .bayan__item:hover > label > .bayan__item__title__opener {
     transform: rotate(0);
-    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 0.4s linear;
+  }
+  .bayan__item__img > img {
+    width: 20vw;
+    height: 0;
+    transition: height 0.2s linear;
   }
 }
